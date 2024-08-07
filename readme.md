@@ -28,37 +28,42 @@ You can use some of the sources below to learn more about Docker :
    $ docker --version
    ```
 
-3. Run a Docker Image from DockerHub
-   ```
-   $ docker run hello-world
-   
-   try this too
-   $ docker run hello-seattle
-   ```
+## C.2 - Try it out
+Use the following instructions to run a container.
+3. Open Docker Desktop and select the Search field on the top navigation bar.
 
-## C.2 - Docker Image
-4. Build a Docker Image from Dockerfile
+4. Specify welcome-to-docker in the search input and then select the Pull button, or go to the GitHub repository using this [link](https://github.com/docker/welcome-to-docker).
+5. Once the image is successfully pulled, select the Run button.
+
+6. Expand the Optional settings.
+
+7. In the Container name, specify welcome-to-docker.
+
+8. In the Host port, specify 8080. 
+
+## C.3 - Docker Image
+10. Build a Docker Image from Dockerfile
    ```
    Syntax  : $ docker build -t <app-name>:<tag> .
    
    Example : $ docker build -t my-game:v0.0.1 .
    ```
 
-5. Change tag of a Docker Image
+11. Change tag of a Docker Image
    ```
    Syntax  : $ docker tag <app-name>:<old-tag> <app-name>:<new-tag>
 
    Example : $ docker tag my-game:v0.0.1 my-game:v0.0.2
    ```
 
-6. Run a Docker Image
+12. Run a Docker Image
    ```
    Syntax  : $ docker run [options] <app-name>:<tag>
    Example : $ docker run -it my-game:v0.0.1
    ```
    For more details about `docker run` or `[options]`, please visit [the official documentation](https://docs.docker.com/engine/reference/run/).
 
-7. List all Docker Images
+13. List all Docker Images
    ```
    Syntax : $ docker images
    ```
@@ -66,51 +71,10 @@ You can use some of the sources below to learn more about Docker :
 ## C.3 - Docker Container
 
 
-8. List all Docker Container
+14. List all Docker Container
    ```
    Syntax : $ docker ps -a
    ```
-
-9. Run existing container
-   ```
-   Syntax    : $ docker start [options] <container-name or container-id>
-   Example 1 : $ docker start -ai quizzical_hawking
-   Example 2 : $ docker start -ai fd1a7b37a93e
-   ```
-
-10. Check CPU & memory usage
-    ```
-    Syntax : $ docker stats
-    ```
-
-11. Check disk space usage
-    ```
-    Syntax : $ docker system df
-    ```
-
-12. Delete a Docker Container
-    ```
-    Syntax    : $ docker rm <container-name or container-id>
-    Example 1 : $ docker rm quizzical_hawking
-    Example 2 : $ docker rm fd1a7b37a93e
-    ```
-
-13. Delete all Docker Containers
-    ```
-    Syntax : $ docker rm $(docker ps -aq)
-    ```
-
-14. Delete a Docker Image
-    ```
-    Syntax  : $ docker rmi <image-id> or $ docker rmi <image-name>:<tag>
-    Example 1 : $ docker rmi afa783ad460f
-    Example 2 : $ docker rmi my-game:v0.0.1
-    ```
-
-15. Delete all Docker Images
-    ```
-    Syntax : $ docker rmi -f $(docker images -q)
-    ```
 ---
 # D. Push to DockerHub
 1. Login to DockerHub
@@ -121,13 +85,13 @@ You can use some of the sources below to learn more about Docker :
 2. Create tag between image that you want to push and repository in DockerHub
    ```
    Syntax  : $ docker tag <image-id> <dockerhub-username/image-name/tag>
-   Example : $ docker tag afa783ad460f danusogipurnomo/my-game:v0.0.1
+   Example : $ docker tag afa783ad460f rhmndocker/my-game:v0.0.1
    ```
    
 3. Push to Docker Hub
    ```
    Syntax  : $ docker push <dockerhub-username/image-name/tag>
-   Example : $ docker push danusogipurnomo/my-game:v0.0.1
+   Example : $ docker push rhmndocker/my-game:v0.0.1
    ```
 
 4. If you experience an error like the following :
@@ -139,10 +103,23 @@ You can use some of the sources below to learn more about Docker :
    ```
    Syntax : $ docker logout
    ```
+5. go to your dockerhub account and find the images
 
-5. To test the image that has been pushed
+6. To test the image that has been pushed
    *Make sure that on your computer there are no more images that are the same as the image you just pushed*
    ```
    Syntax  : $ docker run [options] <dockerhub-username/image-name/tag>
-   Example : $ docker run -it danusogipurnomo/my-game:v0.0.1
+   Example : $ docker run -it rhmndocker/my-game:v0.0.1
+   ```
+## D.1 Docker Buildx
+   To build and push a multi-architecture image using Docker Buildx, you would:
+7. Create a New Buildx Builder (if not already set up):
+   ```
+   docker buildx create --use
+   ```
+
+8. Build for Multiple Architectures:
+   ```
+   docker buildx build --platform linux/amd64,linux/arm64 -t rhmndocker/my-game:v123 --push .
+
    ```
