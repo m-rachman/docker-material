@@ -33,7 +33,7 @@ Use the following instructions to run a container.
 
 3. Open Docker Desktop and select the Search field on the top navigation bar.
 
-4. Specify welcome-to-docker in the search input and then select the Pull button, or go to the GitHub repository using this [link](https://github.com/docker/welcome-to-docker).
+4. Specify `welcome-to-docker` in the search input and then select the Pull button, or go to the GitHub repository using this [link](https://github.com/docker/welcome-to-docker).
 5. Once the image is successfully pulled, select the Run button.
 
 6. Expand the Optional settings.
