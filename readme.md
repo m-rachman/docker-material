@@ -113,6 +113,7 @@ Use the following instructions to run a container.
    ```
 ## D.1 Docker Buildx
    To build and push a multi-architecture image using Docker Buildx, you would:
+   
 7. Create a New Buildx Builder (if not already set up):
    ```
    docker buildx create --use
