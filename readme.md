@@ -56,7 +56,13 @@ Use the following instructions to run a container.
 
    Example : $ docker tag my-game:v0.0.1 my-game:v0.0.2
    ```
-    (b) tetetetetetettetet
+
+   (b) Delete a specific Docker image
+   ```
+   Syntax  : $ docker rmi <IMAGE_ID>
+
+   Example : $ docker rmi a1b2c3d4e5f6
+   ```
 
 12. Run a Docker Image
    ```
@@ -73,9 +79,18 @@ Use the following instructions to run a container.
 ## C.3 - Docker Container
 
 
-14. List all Docker Container
+14. (a) List all Docker Container
    ```
    Syntax : $ docker ps -a
+   ```
+
+   (b) Deletes containers based on CONTAINER ID or NAME
+   
+   ```
+   Syntax  : $ docker rm <CONTAINER_ID or NAME>
+
+   Example : $ docker rm a1b2c3d4e5f6
+
    ```
 ---
 # D. Push to DockerHub
