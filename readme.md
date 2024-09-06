@@ -50,12 +50,13 @@ Use the following instructions to run a container.
    Example : $ docker build -t my-game:v0.0.1 .
    ```
 
-11. Change tag of a Docker Image
+11. (a) Change tag of a Docker Image
    ```
    Syntax  : $ docker tag <app-name>:<old-tag> <app-name>:<new-tag>
 
    Example : $ docker tag my-game:v0.0.1 my-game:v0.0.2
    ```
+    (b) tetetetetetettetet
 
 12. Run a Docker Image
    ```
