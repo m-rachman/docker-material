@@ -15,6 +15,7 @@ You can use some of the sources below to learn more about Docker :
    
 2. [Docker-curriculum.com](https://docker-curriculum.com/)
 
+3. [getting-started-app](https://docs.docker.com/get-started/workshop/02_our_app/)
 ---
 # C. Syntax
 ## C.1 - Basic Syntax
